@@ -1,0 +1,8 @@
+body {
+    width: 60%;
+}
+
+#backBtn {
+    float: right;
+    color: #888888;
+}
