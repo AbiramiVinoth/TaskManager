@@ -1,21 +1,44 @@
-const getUsers = function() {
-    
+const Users = require('../../models/users');
+
+const getUsers = function (req) {
+    try {
+        return Users.find(req.query);
+    } catch (e) {
+        return e;
+    }
 }
 
-const getUserById = function() {
-
+const getUserById = function (req) {
+    try {
+        return Users.findById(req.params.id);
+    } catch (e) {
+        return e;
+    }
 }
 
-const saveUser = function() {
-
+const saveUser = function (req) {
+    try {
+        var user = new Users(req.body);
+        return user.save()
+    } catch (e) {
+        return e;
+    }
 }
 
-const updateUser = function() {
-
+const updateUser = function (req) {
+    try {
+        return Users.findByIdAndUpdate(req.params.id, req.body)
+    } catch (e) {
+        return e;
+    }
 }
 
-const deleteUser = function() {
-
+const deleteUser = function (req) {
+    try {
+        return Users.findByIdAndDelete(req.params.id);
+    } catch (e) {
+        return e;
+    }
 }
 
 module.exports = {
