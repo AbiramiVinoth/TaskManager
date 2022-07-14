@@ -10,10 +10,6 @@ const publicDirPath = path.join(__dirname, '../public');
 const viewPath = path.join(__dirname, '../templates/views');
 const partialPath = path.join(__dirname, '../templates/partials');
 
-const Users = require('./models/users');
-const Tasks = require('./models/tasks');
-
-
 app.use(express.static(publicDirPath));
 app.set('view engine', 'hbs');
 app.set('views', viewPath);
