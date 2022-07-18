@@ -1,38 +1,44 @@
 <html>
-    <head>
-        <title>Add Task</title>
-        <link rel="stylesheet" href="/css/addTask.css">
-        <script src="/js/jquery-3.6.0.js"></script>
-        <script src="/js/addTask.js"></script>
-    </head>
-    <body>
-        <button id="backBtn">Back</button>
-        <br>
-        <br>
-        <form>
-            <fieldset>
-                <label>Task:</label>
-                <input type="text">
-                <br>
-                <br>
-                <label>Status:</label>
-                <select>
-                    <option>Complete</option>
-                    <option>Incomplete</option>
-                </select>
-                <br>
-                <br>
-                <label>Owner:</label>
-                <select>
-                    <option>Abirami</option>
-                    <option>Srimathi</option>
-                    <option>Glory</option>
-                </select>
-                <br>
-                <br>
-                <input type="submit">
-                <input type="reset">
-            </fieldset>
-        </form>
-    </body>
+
+<head>
+    <title>Add Task</title>
+    <link rel="stylesheet" href="/css/addTask.css">
+    <script src="/js/jquery-3.6.0.js"></script>
+    <script src="/js/addTask.js"></script>
+</head>
+
+<body>
+    <button id="backBtn">Back</button>
+    <br>
+    <br>
+    <h1>{{title}}</h1>
+    <br>
+    <br>
+    <form id="taskForm">
+        <fieldset>
+            <label>Task:</label>
+            <input type="text" id="task">
+            <br>
+            <br>
+            <label>Status:</label>
+            <select id="status">
+                <option value="complete">Complete</option>
+                <option value="incomplete">Incomplete</option>
+            </select>
+            <br>
+            <br>
+            <label>Owner:</label>
+            <select id="owner_id">
+                {{#each users}}
+                    <option value="{{this._id}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+            <br>
+            <br>
+            <input type="submit">
+            <input type="reset">
+        </fieldset>
+    </form>
+</body>
+
 </html>

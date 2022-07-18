@@ -1,34 +1,36 @@
 <html>
+
 <head>
     <title>LoginPage</title>
     <link rel="styleSheet" href="css/login.css">
     <script src="js/jquery-3.6.0.js"></script>
-	<script src="js/login.js"></script>
+    <script src="js/login.js"></script>
 </head>
+
 <body>
-<form>
-    <div class="login-box">
-        <img src="img/avatar.jpg" class="avatar">
-        <h1>Login Here</h1>
-        <form>
-        <label>Username:</label>
-        <input type="text">
-        <br>
-        <br>
-        <label>Password:</label>
-        <input type="password" id="passInput">
-        <br>
-        <br>
-        <div class="checkboxes">
-        <label><input type="checkbox" id="showPassword">ShowPassword</label>  
-        <br>
-        <label><input type="checkbox" id="showPassword"><span>Remember Me</span></label>
-        </div>
-        <input type="submit" name="submit" value="Login">
-        <a href="/forgotpassword">Forgot Password</a>
-        <a href="/registration">Registration</a>
+    <form>
+        <fieldset>
+            <label>Username:</label>
+            <input type="text" id="userName">
+            <br>
+            <br>
+            <label>Password:</label>
+            <input type="password" id="passInput">
+            <br>
+            <br>
+            <input type="checkbox" id="showPassword">Show Password
+            <br>
+            <br>
+            <input type="checkbox" id="rememberMe">Remember Me
+            <br>
+            <br>
+            <button>Login</button>
+            <br>
+            <br>
+            <a href="/forgotpassword">Forgot Password</a>
+            <a href="/registration">Registration</a>
+        </fieldset>
     </form>
-    </div>
 </body>
 
 </html>

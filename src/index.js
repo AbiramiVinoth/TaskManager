@@ -18,6 +18,7 @@ hbs.registerPartials(partialPath);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+
 app.get('/reg', function (req, res) {
   res.render('reg')
 })

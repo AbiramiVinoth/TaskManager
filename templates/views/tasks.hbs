@@ -6,7 +6,7 @@
         <script src="/js/task.js"></script>
     </head>
     <body>
-        <h1>Tasks</h1>
+        <h1>{{title}}</h1>
         <a href="/users">Users</a>
         <a href="/tasks">Tasks</a>
         <br>
@@ -28,24 +28,14 @@
                 </tr>
             </thead>
             <tbody>
+                {{#each tasks}}
                 <tr>
                     <td><input type="checkbox"></td>
-                    <td>Reading</td>
-                    <td>Completed</td>
-                    <td>Abirami</td>
+                    <td>{{this.task}}</td>
+                    <td>{{this.status}}</td>
+                    <td>{{this.owner_id}}</td>
                 </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>Writting</td>
-                    <td>Incomplete</td>
-                    <td>Srimathi</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>Listening</td>
-                    <td>Incomplete</td>
-                    <td>Glory</td>
-                </tr>
+            {{/each}}
             </tbody>
         </table>
     </body>

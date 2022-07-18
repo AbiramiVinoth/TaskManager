@@ -8,7 +8,18 @@
 </head>
 
 <body>
-    <h1>Users</h1>
+    <h1>{{title}}</h1>
+    {{!-- {{#if author}}
+        <p>{{name}}</p>
+        <p>{{stdObj.name}} {{stdObj.age}}</p>
+        <p>{{nameArr}}</p>
+    {{/if}}
+    <ul>
+        {{#each nameArr}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul> --}}
+    
     <a href="/users">Users</a>
     <a href="/tasks">Tasks</a>
     <br>
@@ -29,21 +40,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><input type="checkbox"</td>
-                <td>Abi</td>
-                <td>abisubu14@gmail.com</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>Srimathi</td>
-                <td>msrimathi12@gmail.com</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"</td>
-                <td>Glory</td>
-                <td>glorysundar@gmail.com</td>
-            </tr>
+            {{#each users}}
+                <tr>
+                    <td><input type="checkbox"</td>
+                    <td>{{this.name}}</td>
+                    <td>{{this.email}}</td>
+                </tr>
+            {{/each}}
         </tbody>
     </table>
 </body>

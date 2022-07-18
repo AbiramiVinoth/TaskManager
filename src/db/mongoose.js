@@ -5,6 +5,6 @@ mongoose.connect("mongodb://localhost:27017/taskmanger", {
     useUnifiedTopology: true
 });
 
-mongoose.connection.once("open", function() {
+mongoose.connection.once("open", function () {
     console.log("mongodb database connection established successfully");
 });
