@@ -4,6 +4,7 @@
     <title>Add Task</title>
     <link rel="stylesheet" href="/css/addTask.css">
     <script src="/js/jquery-3.6.0.js"></script>
+    {{!-- <script type='text/javascript' src='js/handlebars-v4.0.5.js'></script> --}}
     <script src="/js/addTask.js"></script>
 </head>
 
@@ -17,25 +18,29 @@
     <form id="taskForm">
         <fieldset>
             <label>Task:</label>
-            <input type="text" id="task">
+            <input type="text" id="task" value="{{task.task}}">
             <br>
             <br>
             <label>Status:</label>
             <select id="status">
-                <option value="complete">Complete</option>
-                <option value="incomplete">Incomplete</option>
+                {{!-- {{#select task.status}} --}}
+                    <option value="complete">Complete</option>
+                    <option value="incomplete">Incomplete</option>
+                {{!-- {{/select}} --}}
             </select>
             <br>
             <br>
             <label>Owner:</label>
             <select id="owner_id">
-                {{#each users}}
-                    <option value="{{this._id}}">{{this.name}}</option>
-                {{/each}}
+                {{!-- {{#select task.owner_id}} --}}
+                    {{#each users}}
+                        <option value="{{this._id}}">{{this.name}}</option>
+                    {{/each}}
+                {{!-- {{/select}} --}}
             </select>
             <br>
             <br>
-            <input type="submit">
+            <input type="submit" value="{{btnName}}">
             <input type="reset">
         </fieldset>
     </form>

@@ -30,7 +30,7 @@
             <tbody>
                 {{#each tasks}}
                 <tr>
-                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" id="{{this._id}}"></td>
                     <td>{{this.task}}</td>
                     <td>{{this.status}}</td>
                     <td>{{this.owner_id}}</td>

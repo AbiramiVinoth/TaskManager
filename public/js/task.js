@@ -26,7 +26,7 @@ $(document).ready(function () {
         console.log('checked id', checkedIds[0]);
         
         $.ajax({
-            url: `/api/users/${checkedIds[0]}`,
+            url: `/api/tasks/${checkedIds[0]}`,
             type: 'DELETE',
             success: function() {
                 alert('Deleted successfully');
