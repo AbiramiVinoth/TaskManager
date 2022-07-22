@@ -2,6 +2,7 @@ $(document).ready(function () {
     $("#addBtn").click(function () {
         location.href = "/tasks/add";
     })
+
     $('#deleteBtn').click(function () {
         var checkCount = ($(":checkbox:checked").length);
 
@@ -14,7 +15,27 @@ $(document).ready(function () {
         if (!result) {
             return;
         }
-        alert("Task deleted Successfully");
+
+        var all, checked;
+        all = $("input:checkbox");
+        checked = all.filter(":checked");
+
+        var checkedIds = checked.map(function () {
+            return this.id;
+        });
+        console.log('checked id', checkedIds[0]);
+        
+        $.ajax({
+            url: `/api/users/${checkedIds[0]}`,
+            type: 'DELETE',
+            success: function() {
+                alert('Deleted successfully');
+                location.reload();
+            },
+            error: function() {
+                alert('Unable to delete');
+            }
+        })
     })
 
     $('#editBtn').click(function () {
@@ -24,7 +45,16 @@ $(document).ready(function () {
             alert("Please Select One Checkbox");
             return;
         }
-        location.href = '/tasks/edit';
+
+        var all, checked;
+        all = $("input:checkbox");
+        checked = all.filter(":checked");
+
+        var checkedIds = checked.map(function () {
+            return this.id;
+        });
+
+        location.href = `/tasks/edit/${checkedIds[0]}`;
+       
     })
 })
-

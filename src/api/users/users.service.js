@@ -19,7 +19,7 @@ const getUserById = function (req) {
 const saveUser = function (req) {
     try {
         var user = new Users(req.body);
-        return user.save()
+        return user.save();
     } catch (e) {
         return e;
     }

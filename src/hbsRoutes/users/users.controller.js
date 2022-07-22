@@ -35,11 +35,23 @@ const getUsers = function (req, res) {
 }
 
 const addUser = function (req, res) {
-    res.render('addUser');
+    res.render('addUser',{
+        title: 'Add User',
+        btnName: "Save"
+    });
 }
 
 const editUser = function (req, res) {
-    res.render('addUser');
+    userService.getUserById(req).then(function(user) {
+        console.log('user',user);
+        res.render('addUser',{
+            title: 'Edit User',
+            btnName: 'Update',
+            user
+        });
+    }).catch(function(error) {
+        res.status(500).send('Unable to render the page');
+    })
 }
 
 module.exports = {
